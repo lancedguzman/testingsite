@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Merch Store</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Our Merch Store!</h1>
+        <p>Click any of our items.</p>
+    </div>
+    <div>
+        <ul>
+            {% for item in items %}
+            <li>
+                <a href="{% url 'items_details' item.id %}">
+                    {{ item.product_name}}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+<footer>
+    <p>Copyright 2025 by Group 5. All rights reserved.</p>
+</footer>
+</html>

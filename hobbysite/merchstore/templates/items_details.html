@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Merch Store</title>
+</head>
+<body>
+    <h1>
+        {{ item.product_name }}
+    </h1>
+    <p>
+        Type: {{ item.product_type.type_name }}
+    </p>
+    <p>
+        Description: {{ item.product_description }}
+    </p>
+    <p>
+        Price: {{ item.product_price }}
+    </p>
+
+    <a href="{% url 'items_list' %}">Back to Product List</a>
+</body>
+<footer>
+    <p>Copyright 2025 by Group 5. All rights reserved.</p>
+</footer>
+</html>
