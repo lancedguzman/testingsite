@@ -1,0 +1,19 @@
+{% extends 'base_template.html' %}
+
+    <head>
+        <title>{{ recipe.name }}</title>
+    </head>
+    <body>
+        {% block body_content %}
+        <h1>Recipe Book</h1>
+        <p><Strong>Author: {{ recipe.recipe_author }}</Strong></p>
+        <p>Ingredients:</p>
+        <ul>
+            {% for recipeingredient in recipe.recipe.all %}
+            <li>{{ recipeingredient.ingredient.ingredient_name }}: {{ recipeingredient.quantity }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'recipe_list' %}">Back to Recipes List</a>
+        {% endblock %}
+    </body>
+</html>
