@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Hobbysite</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% block design %}{% endblock %}
+</head>
+<body>
+    <div class="container mt-4">
+        {% block content %}
+        <p>Links go here.</p>
+        {% endblock %}
+    </div>
+</body>
+<footer class="text-center mt-4">
+    <p>Copyright 2025 by Group 5. All rights reserved.</p>
+</footer>
+</html>
