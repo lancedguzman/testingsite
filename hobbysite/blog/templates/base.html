@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>{% block title %}Blog{% endblock %}</title>
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+  body {
+    font-family: "Fredoka";
+  }
+  .article_header {
+    z-index: 9999;
+    position: sticky;
+    top: 0;
+    background-color:rgb(255, 255, 255)
+  }
+  .header_content {
+    padding: 20px;
+    width: 98%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header_content a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #6C5B7B;
+  }
+  .navbar a {
+    padding-left: 10px
+  }
+  .main_content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 100px 0;
+    text-align: center;
+  }
+  {% block style %}{% endblock %}
+ </style>
+</head>
+<body>
+ <header class="article_header">
+  <div class="header_content">
+    <a href="" class="logo">Blog</a>
+    <nav class="navbar">
+      <a href="/blog/articles/">Home</a>
+      <a href="/blog/articles/#categories">Categories</a>
+    </nav>
+  </div>
+</header>
+<div class="main_content">
+  {% block main_content %}{% endblock %}
+</div>
+<div class='sub_content'>
+  {% block sub_content %}{% endblock %}
+</div>
+</body>
+</html>
