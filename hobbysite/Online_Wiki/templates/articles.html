@@ -1,0 +1,15 @@
+<html lang="en-US">
+    <!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <title>Articles</title>
+        <h1>Articles</h1>
+    </head>
+    <body>
+        <ul>
+            {% for article in Articles_List %}
+                <li>{{ article.title }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+    </html>
