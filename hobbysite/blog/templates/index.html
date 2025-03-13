@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{%block title%}Blog{%endblock%}
+
+{% block style %}
+  h1 {
+    font-weight: 700;
+    font-size: 7vw;
+    color:rgb(255, 239, 173);
+  }
+  .main_description {
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: rgb(246, 225, 140);
+  }
+  .main_content {
+    width: 100%;
+    background-color:#6C5B7B;
+    border-radius: 50px;
+    padding: 100px 0;
+  }
+  .find_category_label {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3vw;
+    color: #6C5B7B;
+  }
+  .category_main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .category_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: #6C5B7B;
+    background-color: rgb(255, 249, 224);
+  }
+  .category_text {
+    padding: 20px
+  }
+  .category_text p {
+    margin: 30px 0 30px 0;
+  }
+  .category_container img {
+    height: auto;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .category_button {
+    margin: 20px 0 5px 0;
+    position: absolute;
+    bottom: 15px;
+  }
+
+{% endblock %}
+
+{% block main_content %}
+  <h1>Welcome to the Blog</h1>
+  <p class="main_description">
+    Hey there! Glad you stopped by.<br>
+    This is the place to find fun reads and 
+    useful tips on all kinds of topics.<br>
+    Have a look around and enjoy!
+  </p>
+{% endblock %}
+
+{% block sub_content %}
+  <h2 id="categories" class="find_category_label">Find the category for you!</h2>
+  <div class="category_main">
+    {% for category in article_list %}
+      <div class="category_container">
+        <img src="https://placehold.co/600x400" alt="Some sample words">
+        <div class="category_text">
+          <h2>{{ category.name }}</h2>
+          <p>{{ category.description }}</p>
+          <a class="category_button" href="{{ category.get_absolute_url }}">
+            Read about {{ category.name }}
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{%endblock%}
