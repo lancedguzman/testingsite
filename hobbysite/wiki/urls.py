@@ -6,4 +6,4 @@ urlpatterns = [
     path('wiki/article/<int:pk>',article_detail,name='articles_detail')
 ]
 
-app_name = "Online_Wiki"
+app_name = "wiki"
