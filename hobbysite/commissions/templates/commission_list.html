@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Commissions</title>
+</head>
+<body>
+    <h1>Commissions</h1>
+    <ul>
+        {% for commission in commissions %}
+            <li>
+                <a href="{{ commission.link }}">
+                    {{ commission.title }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No commissions available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

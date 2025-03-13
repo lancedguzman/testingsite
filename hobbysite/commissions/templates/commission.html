@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ commission.title }}</title>
+</head>
+<body>
+    <h1>{{ commission.title }}</h1>
+    <p>{{ commission.description }}</p>
+    <p>People Required: {{ commission.people_required }}</p>
+    <p>Created On: {{ commission.created_on|date:"F j, Y h:i A" }}</p>
+    <p>Last Updated: {{ commission.updated_on|date:"F j, Y h:i A" }}</p>
+
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in commission.comments.all %}
+            <li>
+                {{ comment.entry }} - {{ comment.created_on|date:"F j, Y h:i A" }}
+            </li>
+        {% empty %}
+            <li>There are No comments yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'commissions:commissions_list' %}">Back to commissions list</a>
+</body>
+</html>
